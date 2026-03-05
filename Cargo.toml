@@ -6,6 +6,7 @@ description = "Official Rust library for the TeraflopAI API"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/you/teraflopai-rs"
 readme = "README.md"
+exclude = [".env", ".env.*"]
 
 [dependencies]
 dotenvy = "0.15.7"
@@ -15,6 +16,3 @@ serde_json = "1.0.149"
 
 [dev-dependencies]
 tokio = { version = "1.50.0", features = ["macros", "rt-multi-thread"] }
-
-[package]
-exclude = [".env", ".env.*"]
