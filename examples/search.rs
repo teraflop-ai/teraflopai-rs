@@ -7,7 +7,7 @@ use teraflopai::{TeraflopAI, TeraflopError};
 async fn main() -> Result<(), TeraflopError> {
     dotenv().ok();
 
-    let api_key = env::var("TERAFLOPAI_API_KEY").expect("TERAFLOP_API_KEY missing");
+    let api_key = env::var("TERAFLOPAI_API_KEY").expect("TERAFLOPAI_API_KEY missing");
     let url = "https://api.caselaw.teraflopai.com/v1/search/free";
 
     let api = TeraflopAI::new(api_key, url)?;

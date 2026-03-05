@@ -7,7 +7,7 @@ use teraflopai::{TeraflopAI, TeraflopError};
 async fn main() -> Result<(), TeraflopError> {
     dotenv().ok();
 
-    let api_key = env::var("TERAFLOPAI_API_KEY").expect("TERAFLOP_API_KEY missing");
+    let api_key = env::var("TERAFLOPAI_API_KEY").expect("TERAFLOPAI_API_KEY missing");
     let url = "https://api.segmentation.teraflopai.com/v1/segmentation/free";
 
     let text = r#"
