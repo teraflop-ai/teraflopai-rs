@@ -1,6 +1,6 @@
 [package]
 name = "teraflopai"
-version = "0.1.1"
+version = "0.1.11"
 edition = "2024"
 description = "Official Rust library for the TeraflopAI API"
 license = "MIT OR Apache-2.0"
