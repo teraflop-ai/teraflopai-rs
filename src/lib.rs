@@ -44,6 +44,20 @@ impl TeraflopAI {
         self.post(query).await
     }
 
+    pub async fn embeddings(&self, query: &str, model: &str) -> Result<Value, TeraflopError> {
+        let payload = serde_json::json!({ "input": query, "model": model });
+
+        let response = self.client.post(&self.url).json(&payload).send().await?;
+
+        let status = response.status();
+        if !status.is_success() {
+            let body = response.text().await.unwrap_or_default();
+            return Err(TeraflopError::BadStatus { status, body });
+        }
+
+        Ok(response.json::<Value>().await?)
+    }
+
     pub async fn post(&self, query: &str) -> Result<Value, TeraflopError> {
         let payload = serde_json::json!({ "query": query });
 
